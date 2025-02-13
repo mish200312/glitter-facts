@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glitter Facts</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0e6f6;
+            background-image: url('background-pattern.png'); /* Assuming you have a subtle pattern or image */
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .content {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        button {
+            background-color: #ffb6c1; /* Light pink */
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #ff91a4; /* A slightly darker pink */
+        }
+
+        #factDisplay {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <button id="factButton">Show Random Fact</button>
+        <p id="factDisplay"></p>
+    </div>
+    <script>
+        const facts = {
+            "facts": [
+                {"id": 1, "description": "Glitter dates back to ancient times, where civilizations like the Egyptians used shimmering cosmetics."},
+                {"id": 2, "description": "Modern glitter was invented in 1934 by an American machinist named Henry Ruschmann."},
+                {"id": 3, "description": "Glitter is often used in cosmetics to add a sparkling effect to makeup."},
+                {"id": 4, "description": "Glitter is used in arts and crafts to make projects sparkle and stand out."},
+                {"id": 5, "description": "The reflective properties of glitter make it useful in scientific research to visualize flow patterns in fluids."},
+                {"id": 6, "description": "Glitter comes in a variety of sizes, shapes, and colors, making it versatile for different uses."},
+                {"id": 7, "description": "Biodegradable glitter is now available, which is made from plant-based materials and is more environmentally friendly."},
+                {"id": 8, "description": "Glitter is often used in festive decorations, especially during holidays like Christmas and New Year's."},
+                {"id": 9, "description": "In fashion, glitter is used on clothing, shoes, and accessories to add a touch of glamour."},
+                {"id": 10, "description": "Glitter can be found in some surprising places, like in certain types of concrete to make sidewalks sparkle."}
+            ]
+        };
+
+        document.getElementById('factButton').addEventListener('click', function() {
+            const randomIndex = Math.floor(Math.random() * facts.facts.length);
+            const fact = facts.facts[randomIndex].description;
+            document.getElementById('factDisplay').textContent = fact;
+        });
+    </script>
+</body>
+</html>
